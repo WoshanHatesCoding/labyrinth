@@ -1,54 +1,57 @@
-🌀 Labyrinth Game
-Labyrinth is a Java-based game where the player must escape from a maze while avoiding a randomly-moving dragon. This project was developed as an object-oriented programming assignment and demonstrates concepts like GUI development, game logic, randomness, and database interaction for high scores.
+# 🌀 Labyrinth Game
 
-🎮 Gameplay
-The player starts at the bottom-left corner of a maze.
+> 🎮 **Escape the maze, avoid the dragon, and survive the darkness!**
 
-The goal is to reach the top-right corner as fast as possible.
+---
 
-The dragon moves in a straight line until hitting a wall, then changes direction randomly.
+> ⚠️ **NOTE:**  
+> This repository contains the full source code of the Labyrinth Game.  
+> It is **not** a fully portable game release and requires:
+>
+> - Java Runtime Environment (8+)
+> - MySQL setup (for high scores)
+> - Manual compilation if not using the included `.jar`
 
-If the dragon becomes adjacent to the player, the player loses.
+This project was developed as an **Object-Oriented Programming (OOP)** assignment and is meant for **educational and demonstration purposes**.
 
-Due to darkness, the player can only see up to 3 units away.
+---
 
-The game tracks how many labyrinths the player has successfully escaped.
+## 🧩 Gameplay Features
 
-If the player loses, their name and score are saved in a database.
+- 🧍 **Start:** Bottom-left corner of the maze  
+- 🏁 **Goal:** Reach the top-right corner  
+- 🐉 **Danger:** A dragon roams randomly — if it gets adjacent to you, you lose  
+- 🌑 **Visibility:** Player can only see up to **3 tiles away** due to darkness  
+- 🧠 **Intelligence:** Dragon moves until it hits a wall, then changes direction randomly  
+- 🗃️ **Progress:** Number of completed labyrinths is recorded  
+- ☠️ **Game Over:** On death, your score and name are saved to the high score database  
+- 🏆 **High Scores:** View the top 10 results from the menu  
+- 🔄 **Restart Option** available via menu
 
-A highscore menu displays the top 10 scores.
+---
 
-Includes a menu item to restart the game.
+## 🛠 Implementation Details
 
-📂 Features & Structure
-src/labirithm/*.java – Source code:
+### 📁 Project Structure
+- `src/labirithm/*.java` – Game logic, UI, and database classes
+- `data/img/` – Game images: player, dragon, wall, etc.
+- `data/levels/` – Maze layout files (`.txt`)
+- `labirithm.jar` – Runnable compiled version of the game
+- `README.TXT` – Original notes
 
-GameEngine, GameGUI, MainMenu: game logic and user interface.
+### 🧱 Core Classes
+- `GameEngine.java` – Core game loop & logic
+- `GameGUI.java` – Graphical interface
+- `MainMenu.java` – Start menu & navigation
+- `Leader.java` – High score logic
+- `DB.java` – MySQL database handler
 
-DB.java: manages high score database.
+---
 
-data/img/ – Contains game graphics: player, dragon, walls, exit.
+## 🚀 How to Run the Game
 
-data/levels/ – Maze layout text files.
+> 💡 **Requires Java 8 or later**
 
-labirithm.jar – Prebuilt JAR file to run the game.
-
-README.TXT – Original notes (included in dist/ folder).
-
-🚀 How to Run
-Make sure you have Java 8+ installed.
-
-Run the game from the .jar file:
-
-bash
-Copy
-Edit
+### ▶️ Run the Prebuilt Game
+```bash
 java -jar labirithm.jar
-💡 You may need the MySQL JDBC driver (mysql-connector-j-8.2.0.jar) in your classpath if you're rebuilding from source and using the high score feature.
-
-🏆 High Scores
-Stored in a MySQL database.
-
-Automatically updates when the player loses.
-
-Accessible through the menu.
